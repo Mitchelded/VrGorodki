@@ -1,39 +1,33 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-
-
     [SerializeField]
-    private TextMeshProUGUI scoreText; // Блок текста
+    private TextMeshProUGUI scoreText;
 
-    // [SerializeField]
-    // private GameObject[] gorodokObjects;
     public List<GameObject> gorodokObjects;
-
-
-
     public int scoreForGorodok = 100;
-    [SerializeField]
+
     private int score = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         scoreText = GetComponent<TextMeshProUGUI>();
-        // gorodokObjects = GameObject.FindGameObjectsWithTag("Gorodok");
-        gorodokObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gorodok"));
-
+        GetGorodki();
     }
 
-    // Update is called once per frame
+    public void GetGorodki()
+    {
+        gorodokObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gorodok"));
+    }
+
     void Update()
     {
-        List<GameObject> objectsToRemove = new List<GameObject>(); // Создаем список для объектов, которые нужно удалить
+        gorodokObjects.RemoveAll(item => item == null); // Удаляем отсутствующие объекты из списка
+
+        List<GameObject> objectsToRemove = new List<GameObject>();
 
         foreach (GameObject obj in gorodokObjects)
         {
@@ -41,27 +35,24 @@ public class Score : MonoBehaviour
 
             if (gorodokScript != null && !gorodokScript.isConnected)
             {
-                Debug.Log("Not connected "+obj.name);
-                objectsToRemove.Add(obj); // Добавляем объекты для удаления в отдельный список
+                Debug.Log("Not connected " + obj.name);
+                objectsToRemove.Add(obj);
                 score += scoreForGorodok;
             }
         }
 
-        // Удаляем объекты только после завершения цикла, чтобы не изменять список в процессе итерации
         foreach (GameObject objToRemove in objectsToRemove)
         {
             gorodokObjects.Remove(objToRemove);
-            Debug.Log("Not connected "+objToRemove.name);
+            Debug.Log("Not connected " + objToRemove.name);
             // Destroy(objToRemove); // Удаляем объект из сцены
         }
 
         UpdateScoreUI();
     }
 
-
-
     void UpdateScoreUI()
     {
-        scoreText.text = score.ToString(); // Обновляем текст UI
+        scoreText.text = score.ToString();
     }
 }

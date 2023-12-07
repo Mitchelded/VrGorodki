@@ -8,6 +8,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - Score
+  - SpawnMark
   layers:
   - Default
   - TransparentFX
