@@ -45,7 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabToSpawn:
-  - {fileID: 1657420648695148657, guid: 62cfb42561ff01c47b26038ba5c4e20f, type: 3}
-  - {fileID: 3299448291007741812, guid: 04a3b9a4dda674248b0871ebaa2cce97, type: 3}
+  - {fileID: 3299448291007741812, guid: 9dcd80e5455f08548b652d7f05eadcb7, type: 3}
+  - {fileID: 7718297701956984399, guid: 19082bdfa82932240b442f13fba22cf8, type: 3}
+  - {fileID: 5545577592052392162, guid: e38412a2dd7800945857fec138666359, type: 3}
+  - {fileID: 3220962615909772668, guid: e196b8276fc21db4fa8b81c0583c3a4c, type: 3}
+  - {fileID: 1657420648695148657, guid: 7db58463b1152c640ba923768df11b96, type: 3}
+  - {fileID: 8710278964422121151, guid: 92fb1fa2fb263914a84544b33ab01814, type: 3}
   spawnPoint: {fileID: 6966798356450840252}
   spawnedObject: {fileID: 0}

@@ -9,6 +9,7 @@ TagManager:
   - FxTemporaire
   - Score
   - SpawnMark
+  - SbivatelSpawnMark
   layers:
   - Default
   - TransparentFX

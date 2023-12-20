@@ -23,6 +23,11 @@ public class Score : MonoBehaviour
         gorodokObjects = new List<GameObject>(GameObject.FindGameObjectsWithTag("Gorodok"));
     }
 
+    public void ResetScrore()
+    {
+        score = 0;
+    }
+
     void Update()
     {
         gorodokObjects.RemoveAll(item => item == null); // Удаляем отсутствующие объекты из списка

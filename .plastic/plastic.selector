@@ -1,0 +1,4 @@
+repository "My project@Wise_Hunt@cloud"
+  path "/"
+    br "/main"
+    co "/main"
